@@ -1,0 +1,18 @@
+class Solution(object):
+    def processStr(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        result=''
+        for i in s:
+            if i.isalpha():
+                result+=i
+            elif i=='*':
+                if len(result)>0:
+                    result=result[0:-1]
+            elif i=='#':
+                result+=result
+            elif i=='%':
+                result=result[::-1]
+        return result                    

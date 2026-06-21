@@ -1,0 +1,16 @@
+class Solution(object):
+    def mapWordWeights(self, words, weights):
+        """
+        :type words: List[str]
+        :type weights: List[int]
+        :rtype: str
+        """
+        alp=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+        ans=''
+        for i in words:
+            sol=0
+            for j in i:
+                idx=alp.index(j)
+                sol+=weights[idx]
+            ans+=alp[-((sol%26)+1)]
+        return ans    

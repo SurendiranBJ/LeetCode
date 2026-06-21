@@ -1,0 +1,13 @@
+class Solution(object):
+    def peakIndexInMountainArray(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: int
+        """
+        max=0
+        idx=0
+        for i in range(len(arr)):
+            if max<arr[i]:
+                max=arr[i]
+                idx=i
+        return idx        

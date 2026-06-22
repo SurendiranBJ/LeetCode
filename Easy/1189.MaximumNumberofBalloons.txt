@@ -1,0 +1,20 @@
+class Solution(object):
+    def maxNumberOfBalloons(self, text):
+        """
+        :type text: str
+        :rtype: int
+        """
+        c=0
+        text=list(text)
+        while(len(text)>0):
+            sol='balloon'
+            ans=''
+            for i in  sol:
+                if i in text:
+                    ans+=i
+                    text.remove(i)
+                else:
+                    return c    
+            if ans=='balloon':
+                c+=1
+        return c        
